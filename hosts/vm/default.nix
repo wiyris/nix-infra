@@ -6,6 +6,7 @@
 
   programs' = {
     bat.enable = true;
+    btop.enable = true;
     extra.enable = true;
     eza.enable = true;
     fish.enable = true;
