@@ -1,7 +1,4 @@
 {
-  imports = [
-    ./substituters.nix
-  ];
   nixpkgs.config = {
     allowBroken = false;
     allowUnfree = true;
