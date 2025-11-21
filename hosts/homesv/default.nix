@@ -2,9 +2,7 @@
   imports = [
     ./disko.nix
     ./hardware-configuration.nix
-    # ./hardware.nix
     ./initrd.nix
-    # ./networking.nix
   ];
 
   programs' = {
