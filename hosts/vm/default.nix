@@ -20,6 +20,5 @@
     zoxide.enable = true;
   };
 
-  time.timeZone = "Asia/Tokyo";
   boot.loader.grub.enable = true;
 }

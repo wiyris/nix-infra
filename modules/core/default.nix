@@ -30,6 +30,8 @@ in {
 
   # networking.domain = "";
   zramSwap.enable = true;
+
+  time.timeZone = lib.mkDefault "Asia/Tokyo";
   system.stateVersion = lib.mkDefault "25.05";
-  home-manager.users.${userName}.home.stateVersion = "25.05";
+  home-manager.users.${userName}.home.stateVersion = lib.mkDefault "25.05";
 }
