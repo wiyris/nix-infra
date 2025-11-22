@@ -1,13 +1,13 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    # sshfs
+    sshfs
     # sshs
   ];
   services.openssh = {
     enable = true;
     settings = {
-      # PasswordAuthentication = false;
-      # KbdInteractiveAuthentication = false;
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
   };
 }
