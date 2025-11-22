@@ -16,7 +16,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs.tmux = {
       enable = true;
-      inherit shell;
       escapeTime = 0;
       extraConfig = ''
         set -g status-position top
