@@ -1,8 +1,11 @@
 {
   programs.tmux = {
     keyMode = "vi";
-    prefix = "M-Space";
     extraConfig = ''
+      unbind C-b
+      set -g prefix M-space
+      bind M-space send-prefix
+
       # bind 'v' copy-mode
       bind -n M-v copy-mode
       bind -T copy-mode-vi v send -X begin-selection

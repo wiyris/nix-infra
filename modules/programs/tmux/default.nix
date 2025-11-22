@@ -17,7 +17,6 @@ in {
     programs.tmux = {
       enable = true;
       inherit shell;
-      mouse = true;
       escapeTime = 0;
       extraConfig = ''
         set -g status-position top
