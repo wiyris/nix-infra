@@ -7,13 +7,11 @@
 
   programs' = {
     bat.enable = true;
-    extra.enable = true;
+    btop.enable = true;
     eza.enable = true;
     fish.enable = true;
-    fish.isDefault = true;
     fzf.enable = true;
-    # git.enable = true;
-    nh.enable = true;
+    git.enable = true;
     ripgrep.enable = true;
     starship.enable = true;
     tmux.enable = true;
@@ -26,7 +24,9 @@
     libva-utils
   ];
 
-  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
 
   hardware.graphics = {
     enable = true;
