@@ -44,8 +44,8 @@
       gi = "git init";
       gl = "git log --oneline --decorate --graph -n 10";
       gm = "git merge";
-      gp = "git push";
-      gP = "git pull";
+      gp = "git pull";
+      gP = "git push";
       gr = "git reset HEAD~";
       gR = "git restore";
       gRs = "git restore --staged";
