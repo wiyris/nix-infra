@@ -7,10 +7,10 @@
 in {
   options.programs'.zoxide.enable = lib.mkEnableOption {};
   config = lib.mkIf cfg.enable {
-    hm'.programs.zoxide = {
+    programs.zoxide = {
       enable = true;
       enableFishIntegration = true;
-      options = ["--cmd z"];
+      flags = ["--cmd z"];
     };
   };
 }

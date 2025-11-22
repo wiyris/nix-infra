@@ -7,10 +7,10 @@
 in {
   options.programs'.starship.enable = lib.mkEnableOption {};
   config = lib.mkIf cfg.enable {
-    hm'.programs.starship = {
+    programs.starship = {
       enable = true;
-      enableBashIntegration = false;
-      enableFishIntegration = true;
+      # enableBashIntegration = false;
+      # enableFishIntegration = true;
     };
   };
 }
