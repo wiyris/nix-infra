@@ -9,11 +9,11 @@
   shell = "${pkgs.${defaultShell}}/bin/${defaultShell}";
 in {
   options.programs'.tmux.enable = lib.mkEnableOption {};
+  imports = [
+    ./dots/binds.nix
+    ./plugins/catppuccin.nix
+  ];
   config = lib.mkIf cfg.enable {
-    imports = [
-      ./dots/binds.nix
-      ./plugins/catppuccin.nix
-    ];
     programs.tmux = {
       enable = true;
       inherit shell;
