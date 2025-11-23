@@ -7,15 +7,17 @@
 in {
   options.programs'.bat.enable = lib.mkEnableOption {};
   config = lib.mkIf cfg.enable {
-    programs.bat = {
-      enable = true;
-      settings = {
-        theme = lib.mkForce "base16";
+    hm' = {
+      programs.bat = {
+        enable = true;
+        settings = {
+          theme = lib.mkForce "base16";
+        };
       };
-    };
 
-    environment.shellAliases = {
-      cat = "bat --plain";
+      home.shellAliases = {
+        cat = "bat --plain";
+      };
     };
   };
 }
