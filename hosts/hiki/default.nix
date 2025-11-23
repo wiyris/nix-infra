@@ -6,6 +6,7 @@
   ];
 
   networking'.mullvad.enable = true;
+  # security'.doas.enable = true;
 
   programs' = {
     bat.enable = true;
