@@ -10,7 +10,8 @@
         enable = true;
         port = 22;
         authorizedKeys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINodUsq9pH/nA+bjgpjW5Q83V6ncbNI4p6n6HaHxu+Pd tsubaki@shiki"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAx/jZC1y2inCW9MIH0JWlrnuD/SJo9Rdgz4eQHekVVh"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEbO1HYLDDsYdV6kB8rDsLRSq7kfcCwQpgNGRTqlHTOv"
         ];
         hostKeys = ["/etc/secrets/initrd/ssh_host_ed25519_key"];
       };
