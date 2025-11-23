@@ -18,6 +18,12 @@
                 mountOptions = ["umask=0077"];
               };
             };
+            swap = {
+              size = "8G";
+              content = {
+                type = "swap";
+              };
+            };
             root = {
               size = "100%";
               content = {
@@ -36,7 +42,7 @@
           };
         };
       };
-      data = {
+      hdd = {
         type = "disk";
         device = "/dev/sdb";
         content = {
@@ -46,15 +52,14 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "crypted-data";
+                name = "crypted-hdd";
                 settings = {
                   allowDiscards = true;
                 };
                 content = {
                   type = "filesystem";
                   format = "ext4";
-                  mountpoint = "/data";
-                  # mountOptions = ["umask=0022"];
+                  mountpoint = "/mnt";
                 };
               };
             };
