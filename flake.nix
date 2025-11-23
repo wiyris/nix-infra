@@ -5,6 +5,7 @@
     lib = import ./lib inputs;
   in {
     nixosConfigurations = {
+      hiki = lib.mkNixosSystem inputs.nixpkgs "x86_64-linux" "hiki";
       vm = lib.mkNixosSystem inputs.nixpkgs "x86_64-linux" "vm";
     };
   };
