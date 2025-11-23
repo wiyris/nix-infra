@@ -5,6 +5,8 @@
     ./initrd.nix
   ];
 
+  networking'.mullvad.enable = true;
+
   programs' = {
     bat.enable = true;
     btop.enable = true;
