@@ -20,7 +20,7 @@
       ncg = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
       nvd = "nvd --color always diff /run/current-system result | rg -v 0.0.0 | less -R";
       # sw = "nh os switch";
-      sw = "nh os switch --ask";
+      sw = "nh os switch --ask /home/tsubaki/dots";
 
       g = "git";
       ga = "git add";
