@@ -10,7 +10,7 @@ in {
     hm' = {
       programs.bat = {
         enable = true;
-        settings = {
+        config = {
           theme = lib.mkForce "base16";
         };
       };
