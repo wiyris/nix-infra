@@ -23,21 +23,30 @@
     zoxide.enable = true;
   };
 
+  services' = {
+    arr.enable = true;
+    jellyfin.enable = true;
+    qbittorrent.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     intel-gpu-tools
     libva-utils
   ];
 
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
   };
+
+  environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
+  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "iHD";
 
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
+      intel-ocl
       intel-media-driver
-      intel-vaapi-driver
-      vpl-gpu-rt
+      intel-compute-runtime
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [intel-vaapi-driver];
   };

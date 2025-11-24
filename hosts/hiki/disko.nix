@@ -54,6 +54,7 @@
                   type = "filesystem";
                   format = "ext4";
                   mountpoint = "/data";
+                  mountOptions = ["umask=0002"];
                 };
               };
             };

@@ -23,6 +23,8 @@ in {
     extraGroups = ["wheel"];
   };
 
+  users.groups.media = {};
+
   zramSwap.enable = lib.mkDefault true;
   time.timeZone = lib.mkDefault "Asia/Tokyo";
   system.stateVersion = lib.mkDefault "25.05";

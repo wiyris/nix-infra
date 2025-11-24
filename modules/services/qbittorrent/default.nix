@@ -13,9 +13,9 @@ in {
       enable = true;
       openFirewall = true;
       package = pkgs.qbittorrent-nox;
-      group = "arr";
+      group = "media";
       inherit webuiPort;
     };
-    systemd.services.qbittorrent.wantedBy = [];
+    # systemd.services.qbittorrent.wantedBy = [];
   };
 }
