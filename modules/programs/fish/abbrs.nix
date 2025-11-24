@@ -96,7 +96,7 @@
         ''
           mullvad auto-connect set on
           mullvad lan set allow
-          mullvad relay set location jp tyo
+          # mullvad relay set location jp
           mullvad lockdown-mode set on
           mullvad account login "$argv"
         '';
