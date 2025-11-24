@@ -4,7 +4,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/sda";
+        device = "ata-CT500MX500SSD1_1850E1DC9DA9";
         content = {
           type = "gpt";
           partitions = {
@@ -16,12 +16,6 @@
                 format = "vfat";
                 mountpoint = "/boot";
                 mountOptions = ["umask=0077"];
-              };
-            };
-            swap = {
-              size = "8G";
-              content = {
-                type = "swap";
               };
             };
             root = {
@@ -42,9 +36,9 @@
           };
         };
       };
-      hdd = {
+      data = {
         type = "disk";
-        device = "/dev/sdb";
+        device = "ata-ST8000DM004-2CX188_ZR12QR8X";
         content = {
           type = "gpt";
           partitions = {
