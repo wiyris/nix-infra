@@ -52,14 +52,14 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "crypted-hdd";
+                name = "crypted-data";
                 settings = {
                   allowDiscards = true;
                 };
                 content = {
                   type = "filesystem";
                   format = "ext4";
-                  mountpoint = "/mnt";
+                  mountpoint = "/data";
                 };
               };
             };
