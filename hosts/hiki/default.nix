@@ -26,7 +26,7 @@
   services' = {
     arr.enable = true;
     jellyfin.enable = true;
-    qbittorrent.enable = true;
+    rtorrent.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
