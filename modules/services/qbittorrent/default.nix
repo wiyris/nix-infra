@@ -40,10 +40,10 @@ in {
           };
         };
       };
-      systemd.services.qbittorrent = {
-        wantedBy = [];
-        serviceConfig.UMask = "0002";
-      };
+    };
+    systemd.services.qbittorrent = {
+      wantedBy = [];
+      serviceConfig.UMask = "0002";
     };
   };
 }
