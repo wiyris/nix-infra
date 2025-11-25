@@ -3,12 +3,14 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   cfg = config.services'.arr;
-in {
-  options.services'.arr.enable = lib.mkEnableOption {};
+in
+{
+  options.services'.arr.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
-    users.groups.arr = {};
+    users.groups.arr = { };
     services = {
       # radarr = {
       #   enable = true;

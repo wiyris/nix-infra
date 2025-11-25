@@ -2,13 +2,15 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   cfg = config.security'.doas;
   inherit (config.globals) userName;
-in {
-  options.security'.doas.enable = lib.mkEnableOption {};
+in
+{
+  options.security'.doas.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
-    user'.extraGroups = ["wheel"];
+    user'.extraGroups = [ "wheel" ];
 
     # Disable sudo
     security.sudo.enable = false;
@@ -19,7 +21,7 @@ in {
       wheelNeedsPassword = false;
       extraRules = [
         {
-          users = [userName];
+          users = [ userName ];
           noPass = true;
           keepEnv = true;
         }
@@ -30,4 +32,3 @@ in {
     environment.shellAliases.sudo = "doas";
   };
 }
-

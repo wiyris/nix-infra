@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./disko.nix
     ./hardware-configuration.nix
@@ -36,7 +37,7 @@
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
 
   environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
@@ -49,7 +50,7 @@
       intel-media-driver
       intel-compute-runtime
     ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [intel-vaapi-driver];
+    extraPackages32 = with pkgs.pkgsi686Linux; [ intel-vaapi-driver ];
   };
 
   networking = {

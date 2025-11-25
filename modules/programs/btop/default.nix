@@ -2,10 +2,12 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.programs'.btop;
-in {
-  options.programs'.btop.enable = lib.mkEnableOption {};
+in
+{
+  options.programs'.btop.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
     hm'.programs.btop = {
       enable = true;

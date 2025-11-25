@@ -3,14 +3,16 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   cfg = config.services'.lms;
-in {
-  options.services'.lms.enable = lib.mkEnableOption {};
+in
+{
+  options.services'.lms.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [pkgs.lms];
+    environment.systemPackages = [ pkgs.lms ];
     users = {
-      groups.lms = {};
+      groups.lms = { };
       users = {
         lms.isSystemUser = true;
         lms.group = "lms";
@@ -18,9 +20,9 @@ in {
     };
     systemd.services.lms = {
       description = "Lightweight Music Server";
-      wants = ["network-online.target"];
-      after = ["network-online.target"];
-      wantedBy = ["multi-user.target"];
+      wants = [ "network-online.target" ];
+      after = [ "network-online.target" ];
+      wantedBy = [ "multi-user.target" ];
       serviceConfig = {
         Type = "simple";
         Restart = "on-failure";
@@ -31,6 +33,6 @@ in {
         ExecStart = "${pkgs.lms}/bin/lms";
       };
     };
-    networking.firewall.allowedTCPPorts = [5082];
+    networking.firewall.allowedTCPPorts = [ 5082 ];
   };
 }

@@ -3,11 +3,13 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   cfg = config.services'.rtorrent;
   webuiPort = 8112;
-in {
-  options.services'.rtorrent.enable = lib.mkEnableOption {};
+in
+{
+  options.services'.rtorrent.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
     services.rtorrent = {
       enable = true;
@@ -20,10 +22,10 @@ in {
       enable = true;
       port = webuiPort;
       openFirewall = true;
-      extraArgs = ["--rtsocket=${config.services.rtorrent.rpcSocket}"];
+      extraArgs = [ "--rtsocket=${config.services.rtorrent.rpcSocket}" ];
     };
     # allow access to the socket by putting it in the same group as rtorrent service
     # the socket will have g+w permissions
-    systemd.services.flood.serviceConfig.SupplementaryGroups = [config.services.rtorrent.group];
+    systemd.services.flood.serviceConfig.SupplementaryGroups = [ config.services.rtorrent.group ];
   };
 }

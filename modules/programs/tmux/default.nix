@@ -3,12 +3,14 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   cfg = config.programs'.tmux;
   inherit (config.globals) defaultShell;
   shell = "${pkgs.${defaultShell}}/bin/${defaultShell}";
-in {
-  options.programs'.tmux.enable = lib.mkEnableOption {};
+in
+{
+  options.programs'.tmux.enable = lib.mkEnableOption { };
   imports = [
     ./dots/binds.nix
     ./plugins/catppuccin.nix

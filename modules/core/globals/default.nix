@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   options.globals = {
     userName = lib.mkOption {
       type = lib.types.str;

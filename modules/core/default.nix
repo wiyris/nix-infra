@@ -3,9 +3,11 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (config.globals) userName;
-in {
+in
+{
   environment.systemPackages = with pkgs; [
     curl
     file # print filetype
@@ -20,10 +22,10 @@ in {
     # hashedPasswordFile = "config.sops.secrets.pass-test.path;";
     initialHashedPassword = "$y$j9T$FyXRRqLttcdVGvfopLg0g/$9gILD5hPZLqkwYi1nW9CFWp/VimrcZmssgtYv9qvVt1";
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = [ "wheel" ];
   };
 
-  users.groups.media = {};
+  users.groups.media = { };
 
   zramSwap.enable = lib.mkDefault true;
   time.timeZone = lib.mkDefault "Asia/Tokyo";

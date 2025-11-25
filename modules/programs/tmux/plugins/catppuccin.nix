@@ -1,6 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.tmux = {
-    plugins = with pkgs.tmuxPlugins; [catppuccin];
+    plugins = with pkgs.tmuxPlugins; [ catppuccin ];
     extraConfig = ''
       # https://github.com/catppuccin/tmux/discussions/317#discussioncomment-11064512
 

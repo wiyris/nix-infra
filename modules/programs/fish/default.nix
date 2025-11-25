@@ -3,12 +3,14 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   cfg = config.programs'.fish;
-in {
+in
+{
   options.programs'.fish = {
-    enable = lib.mkEnableOption {};
-    isDefault = lib.mkEnableOption {};
+    enable = lib.mkEnableOption { };
+    isDefault = lib.mkEnableOption { };
   };
 
   config = lib.mkMerge [
@@ -25,7 +27,7 @@ in {
       ];
 
       hm' = {
-        imports = [./abbrs.nix];
+        imports = [ ./abbrs.nix ];
         xdg.configFile."fish/functions" = {
           source = ./functions;
           recursive = true;

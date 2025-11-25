@@ -2,10 +2,12 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.programs'.eza;
-in {
-  options.programs'.eza.enable = lib.mkEnableOption {};
+in
+{
+  options.programs'.eza.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
     hm' = {
       programs.eza = {

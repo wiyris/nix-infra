@@ -2,10 +2,12 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   cfg = config.programs'.ripgrep;
-in {
-  options.programs'.ripgrep.enable = lib.mkEnableOption {};
+in
+{
+  options.programs'.ripgrep.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
     hm'.programs.ripgrep = {
       enable = true;

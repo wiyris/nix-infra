@@ -1,14 +1,17 @@
 {
   description = "infra";
 
-  outputs = inputs: let
-    lib = import ./lib inputs;
-  in {
-    nixosConfigurations = {
-      hiki = lib.mkNixosSystem inputs.nixpkgs "x86_64-linux" "hiki";
-      vm = lib.mkNixosSystem inputs.nixpkgs "x86_64-linux" "vm";
+  outputs =
+    inputs:
+    let
+      lib = import ./lib inputs;
+    in
+    {
+      nixosConfigurations = {
+        hiki = lib.mkNixosSystem inputs.nixpkgs "x86_64-linux" "hiki";
+        vm = lib.mkNixosSystem inputs.nixpkgs "x86_64-linux" "vm";
+      };
     };
-  };
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";

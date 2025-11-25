@@ -3,10 +3,12 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   cfg = config.programs'.yazi;
-in {
-  options.programs'.yazi.enable = lib.mkEnableOption {};
+in
+{
+  options.programs'.yazi.enable = lib.mkEnableOption { };
   config = lib.mkIf cfg.enable {
     hm' = {
       imports = [
@@ -40,7 +42,11 @@ in {
         };
         settings = {
           mgr = {
-            layout = [1 4 3];
+            layout = [
+              1
+              4
+              3
+            ];
             sort_by = "natural";
             sort_sensitive = false;
             sort_reverse = false;
@@ -73,7 +79,7 @@ in {
           mgr.prepend_keymap = [
             {
               run = "plugin jump-to-char";
-              on = ["f"];
+              on = [ "f" ];
               desc = "Jump to char";
             }
           ];
