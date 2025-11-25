@@ -26,6 +26,7 @@
   services' = {
     arr.enable = true;
     jellyfin.enable = true;
+    navidrome.enable = true;
     rtorrent.enable = true;
   };
 
