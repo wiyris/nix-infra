@@ -4,6 +4,8 @@
   ...
 }: let
   cfg = config.services'.navidrome;
+  Port = 4533;
+  MusicFolder = "/data/media/music/albums";
 in {
   options.services'.navidrome.enable = lib.mkEnableOption {};
   config = lib.mkIf cfg.enable {
@@ -12,9 +14,8 @@ in {
       openFirewall = true;
       settings = {
         Address = "0.0.0.0";
-        Port = 4533;
-        MusicFolder = "/data/media/music/albums";
         EnableInsightsCollector = false;
+        inherit Port MusicFolder;
       };
     };
   };
