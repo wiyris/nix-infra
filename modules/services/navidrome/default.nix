@@ -5,7 +5,7 @@
 }: let
   cfg = config.services'.navidrome;
   Port = 4533;
-  MusicFolder = "/data/media/music/albums";
+  MusicFolder = "/data/Music/albums";
 in {
   options.services'.navidrome.enable = lib.mkEnableOption {};
   config = lib.mkIf cfg.enable {
